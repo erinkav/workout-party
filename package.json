@@ -1,0 +1,20 @@
+{
+  "name": "classpass",
+  "version": "1.0.0",
+  "description": "Check for class availability and cancellations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.15.2",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "nightmare": "^2.10.0",
+    "phantomjs": "^2.1.7",
+    "request": "^2.81.0"
+  }
+}

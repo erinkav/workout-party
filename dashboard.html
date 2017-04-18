@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#"
+    ng-app="classpass"
+    ng-controller="CommonController"
+    ng-keyup="keyup($event)"
+    analytics
+    ng-strict-di
+>
+<head>
+    <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+
+    <script src="//cdn.optimizely.com/js/2333360399.js"></script>
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="dns-prefetch" href="//ajax.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdn.classtivity.com" />
+    <link rel="dns-prefetch" href="//hello.myfonts.net" />
+    <link rel="dns-prefetch" href="//connect.facebook.net" />
+
+    <link rel="icon" href="/favicon.ico">
+
+    <title>ClassPass | Dashboard</title>
+
+
+
+    <meta property="og:title" content="ClassPass - Work out at the best studios in your city" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/img/classpass.png" />
+    <meta property="og:url" content="https://classpass.com/" />
+    <meta property="og:description" content="Work out at the best studios in your city" />
+    <meta property="og:site_name" content="ClassPass" />
+    <meta property="fb:app_id" content="205050386284699" />
+
+    <meta name="description" content="Work out at the best studios in your city" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <link rel="stylesheet" href="/ng/dist/css/main.css?v=9484-b552e2ba554cc1f8b74837550d56eb5081435c98">
+
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="/js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+    <!--[if lte IE 11]>
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+    <script>
+        /* eslint-disable */
+        
+            (function(p,l,o,w,i,n,g){if(!p[i]||!p[i].track){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+            p.GlobalSnowplowNamespace.push(i);if(!p[i]){p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)}};
+            p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;n.src=w;
+            g.parentNode.insertBefore(n,g)}}(window,document,"script","//d1fc8wv8zag5ca.cloudfront.net/2.6.1/sp.js","snowplow"));
+            if (window.snowplow) {
+                var appId = 'classpass-frontend-legacy';
+                var env = 'prod';
+                var host = 'collector.classpass.com';
+
+                // Initialize Event Collector
+                snowplow('newTracker', env, host, {
+                    appId: appId,
+                    platform: 'web',
+                    bufferSize: 1,
+                    encodeBase64: true,
+                    forceSecureTracker: true,
+                    post: true
+                });
+                
+                // Create a global tracking wrapper for unstructured events
+                window.trackUnstruct = function(name, data) {
+                    window.snowplow(('trackUnstructEvent:' + env), {
+                        schema: 'iglu:com.classpass/general_event/jsonschema/1-0-0',
+                        data: {
+                            event_type: name,
+                            event_data: JSON.stringify(data || {})
+                        }
+                    });
+                }
+            } else {
+                console.error('Event collector initialization failed.')
+            }
+        
+    </script>
+
+
+
+    <script>
+        /* eslint-disable */
+        
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-25463615-3', {'cookieDomain': 'classpass.com'});
+            ga('set', 'visitorId', '73816242558f57b9bcb78e');
+            ga('set', 'dimension8', 'subscribed');
+        
+                            
+            window.optimizely = window.optimizely || [];
+            window.optimizely.push('activateUniversalAnalytics');
+                            ga('set', 'userId', '1198728');
+                            ga('send', 'pageview');
+    </script>
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.1/mobile-detect.min.js"></script>
+
+<script type="text/javascript">
+    
+    /* eslint-disable */
+    (function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments, 0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+    
+    
+    var __session_length = 30* 60 * 1e3;
+    function _mixpanelLoaded(){"use strict";var e;try{e=parseInt(window.localStorage.getItem("lastSessionStart")||0,10)}catch(t){}if(e<Date.now()-__session_length){_mixpanelLoaded__sessionStart();try{window.localStorage.setItem("lastSessionStart",Date.now())}catch(t){}}}function _mixpanelLoaded__sessionStart(){"use strict";var e=document.getElementsByTagName("body");if(e.length){var t=e[0],a=(t.className.split(" "),t.getAttribute("data-page-type-v2"));if(a){var n=t.getAttribute("data-msa-id"),s=t.getAttribute("data-msa-name");if("undefined"==typeof MobileDetect)return;var o=new MobileDetect(navigator.userAgent),i="unknown";o.phone()?i="phone":o.tablet()?i="tablet":o.mobile()||(i="desktop");var r={app_platform:"web",session_start_count:(mixpanel.get_property("session_start_count")||0)+1,device_type:i},l=mixpanel.get_property("user_type");"undefined"==typeof l&&(r.user_type="prospect"),null!==n&&(r.msa_id=n),null!==s&&(r.msa_name=s),mixpanel.register(r)}}}
+
+    mixpanel.init('13a079f3c862893a971ff2215ef81c76', {'loaded': _mixpanelLoaded});
+</script>
+
+
+    
+    <script type="text/javascript">
+        var _sift = window._sift = window._sift || [];
+        _sift.push(['_setAccount', '0454019c60']);
+        _sift.push(['_setUserId', '1198728']);
+        _sift.push(['_trackPageview']);
+
+        (function() {
+            function ls() {
+                var e = document.createElement('script');
+                e.src = 'https://cdn.siftscience.com/s.js';
+                document.body.appendChild(e);
+            }
+            if (window.attachEvent) {
+                window.attachEvent('onload', ls);
+            } else {
+                window.addEventListener('load', ls, false);
+            }
+        })();
+    </script>
+    
+
+
+    <base href="/">
+</head>
+<body
+     class="dashboard"    >
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NQ2Q9B"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NQ2Q9B');</script>
+<!-- End Google Tag Manager -->
+
+
+<script>
+  window.fbAsyncInit = function() {
+    if (typeof FB !== 'undefined') {
+      FB.init({
+        appId: '205050386284699',
+        xfbml: true,
+        version: 'v2.5'
+      });
+    }
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+<!--[if lt IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser.<br>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+<div class="navbar-wrapper">
+
+    <div class="banner banner--thin banner--friendly js-banner" data-cookie="hide_alert_upgrade_plan">
+  <a class="banner__close banner__close--light js-banner-close">Close</a>
+    <p>
+      <a href="/settings/membership?ref=upgrade" data-source="banner" target="_self" class="banner__next banner__next--light link--stealth">Ready for another class? Choose a plan now</a>
+    </p>
+</div>
+
+    <header class="header js-log-state"role="navigation"data-user-logged-in="1"data-user-id="1198728"data-redirect-logout="true"data-utility="0"><div class="wrap wrap--flush"><h1 class="header__logo"><a href="/home" class="js-clear-filters" target="_self">ClassPass</a></h1><nav class="header__nav hidden md-block"><ul><li><a href="/classes"class="js-clear-filters search-classes"ng-click="analyticsService.trackGuestViewCtaMixpanel($event);"target="_self">Classes</a></li><li><a href="/studios"class="js-clear-filters browse-studios"ng-click="analyticsService.trackGuestViewCtaMixpanel($event);"target="_self">Studios</a></li><li><a href="/videos"class="js-clear-filters browse-studios header__nav--badged"target="_self">Videos</a></li><li><a href="/gifts?ref=header_click"class="js-clear-filters"target="_self">Give a gift</a></li>
+</ul></nav><div class="header__dropdown js-header__dropdown"><div class="header__dropdown__top"><a class="js-header__dropdown__link" href="/profile/upcoming" target="_self"><div class="avatar avatar--outline avatar--outline--white header__dropdown__avatar header__dropdown__avatar--arrow"><div></div></div></a><a class="header__dropdown__extra js-nav-book-class hidden" href="/classes" target="_self">Book a Class</a><a class="header__dropdown__extra js-nav-upcoming-res " href="/profile/upcoming" target="_self"><span class="js-nav-upcoming-res-count">4</span> upcoming</a><a class="header__dropdown__name header__dropdown--positioned" href="/account" target="_self">Erin</a></div>
+<ul class="header__dropdown__options"><li><a href="/classes"class="js-clear-filters search-classes md-hidden"ng-click="analyticsService.trackGuestViewCtaMixpanel($event);"target="_self">Classes</a></li><li><a href="/studios"class="js-clear-filters browse-studios md-hidden"ng-click="analyticsService.trackGuestViewCtaMixpanel($event);"target="_self">Studios</a></li><li><a href="/videos"class="js-clear-filters browse-studios header__nav--badged md-hidden"target="_self">Videos</a></li><li><a href="/gifts?ref=header_click"class="js-clear-filters"target="_self">Give a gift</a></li>
+<li><a href="/profile/upcoming" target="_self">Profile</a></li><li><a href="/settings/membership" target="_self">Settings</a></li><li><span class="js-friendbuy-widget-load"><a href="/refer" data-source="nav dropdown" class="header__dropdown__promo friendbuy-bsy-hFg" target="_self">Get $30</a></span></li><li><a href="/logout" target="_self" class="js-logout">Log out</a></li>
+</ul></div><a class="hidden lg-inline-block header__bt bt header__bt--get-the-app js-get-the-app"ng-click="GetTheAppService.triggerGetTheAppModal();"target="_self">Get the app</a></div></header>
+</div>
+
+<div id="main" role="main" class="body__content ">
+  <div class="dashboard__main wrap wrap--flush">
+  <dashboard></dashboard>
+</div>
+
+</div>
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer__links__primary">
+            <div class="grid">
+                <div class="grid__item md-4/11">
+                    <h5 class="footer__header">Company</h5>
+                    <div class="grid">
+                        <div class="grid__item md-1/3">
+                            <ul>
+                                <li><a href="/partners" target="_self" class="js-footer-link">Partners</a></li><!--
+                             --><li><a href="/about" target="_self" class="js-footer-link">About</a></li><!--
+                             --><li><a href="/team" target="_self" class="js-footer-link">Team</a></li>
+                            </ul>
+                        </div><!--
+                     --><div class="grid__item md-1/3">
+                            <ul>
+                                <li><a href="/jobs" target="_self" class="js-footer-link">Jobs</a></li><!--
+                             --><li><a href="/press-room/" target="_self" class="js-footer-link">Press Room</a></li><!--
+                             --><li><a href="https://classpass.com/blog/" target="_blank" class="js-footer-link">The Warm Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--
+             --><div class="grid__item md-3/11">
+                    <h5 class="footer__header">Support</h5>
+                    <ul>
+                        <li><a href="https://help.classpass.com" target="_blank" class="js-footer-link">Help Center</a></li><!--
+                     --><li><a href="/contact" target="_self" class="js-footer-link">Contact</a></li>
+                    </ul>
+                </div><!--
+             --><div class="grid__item md-4/11">
+                    <h5 class="footer__header">Enjoy fitness on the go</h5>
+                    <div class="footer__downloads">
+                                                <p><a href="https://itunes.apple.com/us/app/classpass/id912947244?mt=8&uo=4" target="_blank" class="footer__downloads--ios js-app-link" data-app-type="iPhone">Download ClassPass for iPhone</a></p><!--
+                     --><!--
+                     --><!--
+                    --><p><a href="https://play.google.com/store/apps/details?id=com.classpass.classpass" target="_blank" class="footer__downloads--android js-app-link" data-app-type="Android">Download ClassPass for Android</a></p>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__links__secondary">
+            <div class="footer__icons">
+                <ul>
+                    <li>
+                        <a class="icon icon--28 icon--fb-white js-footer-link" href="//www.facebook.com/classpass" target="_blank">Facebook</a>
+                    </li>
+                    <li>
+                        <a class="icon icon--28 icon--tw-white js-footer-link" href="//twitter.com/classpass" target="_blank">Twitter</a>
+                    </li>
+                    <li>
+                        <a class="icon icon--28 icon--ig-white js-footer-link" href="//instagram.com/classpass" target="_blank">Instagram</a>
+                    </li>
+                    <li>
+                        <a class="icon icon--28 icon--pt-white js-footer-link" href="//www.pinterest.com/classpass" target="_blank">Pinterest</a>
+                    </li>
+                    <li>
+                        <a class="icon icon--28 icon--sp-white js-footer-link" href="//play.spotify.com/user/classpass" target="_blank">Spotify</a>
+                    </li>
+                    <li>
+                        <a class="icon icon--28 icon--tb-white js-footer-link" href="//classpass.tumblr.com" target="_blank">Tumblr</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="footer__legal">
+                <li><a href="/terms" target="_self" class="js-footer-link">Terms of Use</a></li>
+                <li><a href="/privacy" target="_self" class="js-footer-link">Privacy Policy</a></li>
+            </ul>
+            <p>© 2017 ClassPass Inc., <span class="block md-inline">275 7th Avenue, New York, NY 10001</span></p>
+        </div>
+    </div>
+</footer>
+
+
+<div ui-view="modal"></div>
+
+
+    <script type="text/javascript">
+        window._trackJs = {
+            token: "cb61be0870ca4a90bf96db59a58556fa",
+            application: "cp-php",
+            onError: function(payload) {
+                var errorsToIgnore = ['401', '403', '404', '500'];
+                for (var i = 0; i < errorsToIgnore.length; i++ ) {
+                    if (payload.message.indexOf(errorsToIgnore[i]) >= 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        };
+
+            window._trackJs.userId = "1198728";
+
+        </script>
+    <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+
+
+    <script type="text/javascript">var ENVIRONMENT = "prd";var MAIN_URL = "https://classpass.com/";var MAIN_RELATIVE_URL = "//classpass.com/";var URL_PREFIX_AJAX = "/a/";var URL_PREFIX_IMAGE = "https://d342jfhztpgus0.cloudfront.net/2.1.0/img/";var URL_PREFIX_JS = "//classpass.com/js/";var URL_PREFIX_CSS = "//classpass.com/css/";var FB_APP_ID = "205050386284699";var STRIPE_PUBLISHABLE_KEY = "pk_09LWxpuEKGS6uapk3oo2iDyDbJuI5";var MAPBOX_ID = "classpass.nd2n37ek";var MIXPANEL_API_TOKEN = "13a079f3c862893a971ff2215ef81c76";var BRANCH_IO_API_KEY = "key_live_phe4Yf3W3FgoUKMeZTbBRkaevveeJq6e";var ROUTE_INFO = {action: "dashboard",attributes: {scheduleId: "",venueId: "",venueAlias: "",},};var USER_ID = "1198728";
+</script>
+
+    <script src="/ng/dist/js/vendor.js?v=9484-b552e2ba554cc1f8b74837550d56eb5081435c98"></script>
+    <script src="/ng/dist/js/app.js?v=9484-b552e2ba554cc1f8b74837550d56eb5081435c98"></script>
+    <script src="https://code.angularjs.org/1.2.5/i18n/angular-locale_en-us.js"></script>
+    <script>(function() {"use strict";angular.module("classpass").factory("Config", ['$rootScope', 'UserProfile', 'UserSettings', 'Permissions', function($rootScope, UserProfile, UserSettings, Permissions) {var action = "dashboard";var config = {visitorGeocode:{latitude: 37.8033,longitude: -122.4108},msaGeocode:{lat: 37.77851867675781000,lon: -122.40563964843750000,zoom_level: 11},open_access: false,open_access_announcement: false};$rootScope.guest = {userId: 1198728,homeMsaName: "San Francisco Bay Area",homeMsaId: "3",homeMsaCountryId: 1,flexMsaTz: "America/Los_Angeles",flexMsaId: 3,flexMsaAlias: "san-francisco",isUser: true,isNewMember: false,isMember: true,isActive: true,isCancelled: false,isUnsubscribed: false,fbLink: false,};$rootScope.action = action;$rootScope.userDataModels = $rootScope.guest.isUser ? [UserProfile, UserSettings, Permissions] : [];return config;}]).config(['$compileProvider', '$logProvider', '$httpProvider', function ($compileProvider, $logProvider, $httpProvider) {$logProvider.debugEnabled(false);$compileProvider.debugInfoEnabled(false);$httpProvider.useApplyAsync(true);}]).constant('ENVIRONMENT', "prd").constant('URL_PREFIX_IMAGE', "https://d342jfhztpgus0.cloudfront.net/2.1.0/img/").constant('URL_PREFIX_IMAGE_CDN', "https://d342jfhztpgus0.cloudfront.net/2.1.0/img/");}());</script>
+
+
+
+
+<script type="text/javascript">
+    dataLayer.push({
+
+            'userId' : "1198728",
+        'userEmail' : "elkavanaugh+classpass@gmail.com",
+    
+    'userType': "subscribed"
+    });
+</script>
+
+    <script type="text/javascript">
+    window['friendbuy'] = window['friendbuy'] || [];
+    window['friendbuy'].push(['site', 'site-4eaf327d-www.classpass.com']);
+    window['friendbuy'].push(['track', 'customer',
+        {
+            id: "1198728",
+            email: "elkavanaugh+classpass@gmail.com"
+        }
+    ]);
+    window["friendbuy"].push(["widget",
+        "bsy-hFg",
+        {configuration: {
+            share_button: false
+            , auto_delay: 0        }}
+    ]);
+
+    (function (f, r, n, d, b, y) {
+        b = f.createElement(r), y = f.getElementsByTagName(r)[0];b.async = 1;b.src = n;y.parentNode.insertBefore(b, y);
+    })(document, 'script', '//djnf6e5yyirys.cloudfront.net/js/friendbuy.min.js');
+</script>
+<div class="widgets">
+    <a href="#" class="friendbuy-bsy-hFg"></a>
+</div>
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"55747177e4","applicationID":"29867048","transactionName":"ZwADNkpYXhUFVE1RWF5KIhdLTV8LS3NYS19SCgAQXA==","queueTime":0,"applicationTime":235,"atts":"S0cAQAJCTRs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
